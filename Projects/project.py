@@ -378,6 +378,7 @@ while(True):
           if Amount <= 0:
             print(f"{'Invalid Amount :(':>35}")
             print(f"{'='*39:>46}")
+            break
           else:
             deposit(ID, Password, Amount)
             print(f"{'='*39:>46}")
@@ -397,6 +398,7 @@ while(True):
           else:
             withdrawal(ID, Password, Amount)
             print(f"{'='*39:>46}")
+            break
         except Exception as e:
           print(f"{'Invalid Amount! Please enter numbers only :(':>58}", e)
           print(f"{'='*39:>46}")      
