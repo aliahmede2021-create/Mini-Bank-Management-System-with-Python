@@ -467,26 +467,28 @@ while(True):
           try:
             ID = int(input(f"\n{'Enter the ID of the account to search:':>47} "))
             break
-        except Exception as e:
-          print(f"{'Invalid Amount! Please enter numbers only :(':>58}", e)
-          print(f"{'='*39:>46}")      
-    case 6:
-      print(f"{'='*39:>46}")
-      ID = int(input(f"\n{'Enter your ID:':>28} "))
-      Password = input(f"{'Enter your account password:':>42} ")
-      searchForAccount(ID, Password)
-      print(f"{'='*39:>46}")
-    case 7:
-      print(f"{'='*39:>46}")
-      ID = int(input(f"\n{'Enter your ID:':>28} "))
-      Password = input(f"{'Enter your account password:':>42} ")
-      deleteAccount(ID, Password)
-      print(f"{'='*39:>46}")
-    case 8:
-      print(f"{'='*39:>46}")
-      print(f"{'Program Terminated! Goodbye :)':>44}")
-      break
-    case _:
-      print(f"{'='*39:>46}")
-      print(f"{'Error! Try Again':>30}")
-      print(f"{'='*39:>46}")
+          except Exception as e:
+            print(f"{'Invalid ID! Please enter numbers only :(':>48}", e)
+        Password = input(f"{'Enter the account password:':>42} ")
+        searchForAccount(ID, Password)
+        print(f"{'='*39:>47}")
+      case 6:
+        print(f"{'='*39:>47}")
+        deleteAccount(current_user["id"], raw_password)
+        current_user = None
+        raw_password = None
+        print(f"{'='*39:>47}")
+      case 7:
+        print(f"{'='*39:>47}")
+        viewTransactionHistory()
+        print(f"{'='*39:>47}")
+      case 8:
+        print(f"{'='*39:>47}")
+        print(f"{'You have been logged out. :)':>44}")
+        current_user = None
+        raw_password = None
+        print(f"{'='*39:>47}")
+      case _:
+        print(f"{'='*39:>47}")
+        print(f"{'Error! Try Again':>30}")
+        print(f"{'='*39:>47}")
